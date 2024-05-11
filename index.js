@@ -35,7 +35,8 @@ app.get("/api/:date?", (req, res) => {
   
   // If a valid date string is provided
   const date = new Date(dateString);
-  if (!isNaN(date.getTime())) {
+  if (!isNaN(timestamp)) {
+    const date = new Date(timestamp);
     return res.json({ unix: date.getTime(), utc: date.toUTCString() });
   }
   
